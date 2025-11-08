@@ -1,5 +1,7 @@
 import nodemailer from 'nodemailer';
 import { Subscriber } from '../models/Subscriber.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 interface EmailOptions {
   to: string;
