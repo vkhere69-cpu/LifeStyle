@@ -14,15 +14,27 @@ class EmailService {
 
   constructor() {
     // Configure transporter with environment variables
+    // For cloud platforms like Render.com, use port 465 with secure: true
+    const port = parseInt(process.env.SMTP_PORT || '465');
+    const secure = process.env.SMTP_SECURE === 'true' || port === 465;
+    
     this.transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_SECURE === 'true',
+      port: port,
+      secure: secure, // true for 465, false for other ports
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
-    });
+      // Add connection timeout and other options for better reliability
+      connectionTimeout: 10000, // 10 seconds
+      greetingTimeout: 5000,
+      socketTimeout: 15000,
+      // Disable pool to avoid connection issues on serverless/cloud platforms
+      pool: false,
+      // Add debug logging if needed
+      debug: process.env.NODE_ENV === 'development',
+    } as any);
   }
 
   async sendEmail({ to, subject, html }: EmailOptions) {
