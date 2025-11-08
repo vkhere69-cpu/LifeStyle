@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Camera, Laugh, Sparkles, Target, Heart } from 'lucide-react';
 import { apiClient } from '../lib/api-client';
 
@@ -129,12 +130,12 @@ export default function About() {
             I'm always excited to collaborate on new projects, whether it's brand
             partnerships, creative campaigns, or comedy collaborations.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block px-8 py-4 bg-white text-violet-600 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 // src/pages/Home.tsx
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Youtube, ArrowRight, Sparkles } from 'lucide-react';
 import { apiClient } from '../lib/api-client';
 import { YoutubeFeed } from '../components/YoutubeFeed';
@@ -94,20 +95,20 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a
-                  href={heroContent?.cta_link || '/portfolio'}
+                <Link
+                  to={heroContent?.cta_link || '/portfolio'}
                   className="group px-8 py-4 bg-gradient-to-r from-violet-600 via-purple-600 to-violet-700 text-white rounded-full font-semibold hover:from-violet-700 hover:via-purple-700 hover:to-violet-800 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-2"
                 >
                   {heroContent?.cta_text || 'Explore More'}
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="px-8 py-4 bg-white/20 backdrop-blur-md text-white rounded-full font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-white/50"
                 >
                   Let's Collaborate
-                </a>
+                </Link>
               </div>
 
               {/* Subscribe Form and Scroll Indicator - Same Line */}
@@ -163,12 +164,12 @@ export default function Home() {
               Let's create something amazing! From brand collaborations to creative projects,
               I'm always excited to bring new ideas to life.
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-block px-8 py-4 bg-gradient-to-r from-violet-600 via-purple-600 to-violet-700 text-white rounded-full font-semibold hover:from-violet-700 hover:via-purple-700 hover:to-violet-800 transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </section>
       </div>

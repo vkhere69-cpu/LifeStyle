@@ -107,15 +107,15 @@ export default function BlogManager() {
 
                 <div className="flex items-center gap-2 ml-4">
                   {post.status === 'published' && (
-                    <a
-                      href={`/blog/${post.slug}`}
+                    <Link
+                      to={`/blog/${post.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 text-blue-500 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded-lg transition-colors"
                       title="View post"
                     >
                       <Eye className="h-5 w-5" />
-                    </a>
+                    </Link>
                   )}
                   <Link
                     to={`/admin/blog/edit/${post._id}`}

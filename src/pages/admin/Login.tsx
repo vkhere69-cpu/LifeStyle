@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Lock, Mail, Laugh } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -98,9 +98,9 @@ export default function Login() {
         </form>
 
         <div className="mt-6 text-center">
-          <a href="/" className="text-violet-600 hover:text-violet-700 font-semibold">
+          <Link to="/" className="text-violet-600 hover:text-violet-700 font-semibold">
             ← Back to Website
-          </a>
+          </Link>
         </div>
       </div>
     </div>

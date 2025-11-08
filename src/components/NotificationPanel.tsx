@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { X, Info, CheckCircle, AlertTriangle, Megaphone } from 'lucide-react';
 import { apiClient } from '../lib/api-client';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -90,13 +91,25 @@ export function NotificationPanel() {
                   <h3 className="font-bold text-sm mb-1">{notification.title}</h3>
                   <p className="text-sm opacity-90">{notification.message}</p>
                   {notification.link && (
-                    <a
-                      href={notification.link}
-                      className="text-sm font-semibold underline mt-2 inline-block hover:opacity-80"
-                      onClick={() => handleDismiss(notification._id)}
-                    >
-                      Learn More →
-                    </a>
+                    notification.link.startsWith('/') ? (
+                      <Link
+                        to={notification.link}
+                        className="text-sm font-semibold underline mt-2 inline-block hover:opacity-80"
+                        onClick={() => handleDismiss(notification._id)}
+                      >
+                        Learn More →
+                      </Link>
+                    ) : (
+                      <a
+                        href={notification.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold underline mt-2 inline-block hover:opacity-80"
+                        onClick={() => handleDismiss(notification._id)}
+                      >
+                        Learn More →
+                      </a>
+                    )
                   )}
                 </div>
                 <button

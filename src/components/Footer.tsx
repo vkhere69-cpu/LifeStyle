@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Instagram, Youtube, Mail, Heart } from 'lucide-react';
 import { SubscribeForm } from './SubscribeForm';
 
@@ -21,28 +22,28 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-6 text-gray-200">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
+                <Link to="/" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
                   <span className="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/portfolio" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
+                <Link to="/portfolio" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
                   <span className="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Portfolio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
+                <Link to="/blog" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
                   <span className="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
+                <Link to="/contact" className="text-white/80 hover:text-violet-400 transition-colors duration-200 flex items-center group">
                   <span className="w-1.5 h-1.5 bg-violet-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -62,12 +63,12 @@ export default function Footer() {
               >
                 <Youtube className="h-5 w-5" />
               </a>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="p-3 bg-gray-800/50 rounded-full hover:bg-violet-600 transition-all duration-300 hover:scale-110"
               >
                 <Mail className="h-5 w-5" />
-              </a>
+              </Link>
             </div>
           </div>
 

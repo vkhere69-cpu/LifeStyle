@@ -98,20 +98,6 @@ export class InstagramService {
           mediaType = item.children.data[0].media_type.toLowerCase();
         }
 
-        await InstagramPost.findOneAndUpdate(
-          { postId: item.id },
-          {
-            postId: item.id,
-            caption: item.caption || '',
-            mediaUrl: mediaUrl || item.thumbnail_url,
-            permalink: item.permalink,
-            mediaType,
-            timestamp: new Date(item.timestamp),
-            isReel: item.media_type === 'REEL',
-            is_visible: true
-          },
-          { upsert: true, new: true }
-        );
       }
       
       console.log('Successfully synced Instagram posts');
