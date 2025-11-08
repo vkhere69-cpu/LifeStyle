@@ -39,6 +39,36 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
+// SMTP diagnostics endpoint (for debugging on Render.com)
+app.get('/test-smtp', async (req, res) => {
+  try {
+    const { runSMTPDiagnostics } = await import('./utils/test-smtp.js');
+    
+    // Capture console output
+    const logs: string[] = [];
+    const originalLog = console.log;
+    console.log = (...args) => {
+      logs.push(args.join(' '));
+      originalLog(...args);
+    };
+    
+    await runSMTPDiagnostics();
+    
+    console.log = originalLog;
+    
+    res.json({ 
+      status: 'completed', 
+      logs: logs,
+      message: 'Check server console for detailed output'
+    });
+  } catch (error: any) {
+    res.status(500).json({ 
+      status: 'error', 
+      message: error.message 
+    });
+  }
+});
+
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/settings', settingsRoutes);
