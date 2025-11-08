@@ -1,7 +1,7 @@
 // backend/src/services/youtube.service.ts
 import axios from 'axios';
-import YouTubeVideo from '../models/YouTubeVideo';
-import { emailService } from './email.service';
+import YouTubeVideo from '../models/YouTubeVideo.js';
+import { emailService } from './email.service.js';
 
 export class YoutubeService {
   private static readonly YOUTUBE_API_URL = 'https://www.googleapis.com/youtube/v3';

@@ -10,9 +10,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
-              Lifestyle
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/logo-noBG.png" alt="Logo" className="h-10 w-10" />
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
+                Lifestyle
+              </h3>
+            </div>
             <p className="text-white/90">
               Where comedy meets modelling. Follow the journey of laughter and style.
             </p>

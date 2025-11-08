@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { HeroContent } from '../models/HeroContent';
-import { authenticate } from '../middleware/auth';
+import { HeroContent } from '../models/HeroContent.js';
+import { authenticate } from '../middleware/auth.js';
 
 const router = Router();
 

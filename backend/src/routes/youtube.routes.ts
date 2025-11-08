@@ -1,7 +1,7 @@
 // backend/src/routes/youtube.routes.ts
 import { Router } from 'express';
-import YoutubeService from '../services/youtube.service';
-import { authenticate } from '../middleware/auth';
+import YoutubeService from '../services/youtube.service.js';
+import { authenticate } from '../middleware/auth.js';
 
 const router = Router();
 

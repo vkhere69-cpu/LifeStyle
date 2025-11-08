@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { Subscriber } from '../models/Subscriber';
-import { authenticate } from '../middleware/auth';
+import { Subscriber } from '../models/Subscriber.js';
+import { authenticate } from '../middleware/auth.js';
 
 const router = Router();
 

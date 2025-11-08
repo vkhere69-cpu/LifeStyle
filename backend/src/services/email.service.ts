@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { Subscriber } from '../models/Subscriber';
+import { Subscriber } from '../models/Subscriber.js';
 
 interface EmailOptions {
   to: string;

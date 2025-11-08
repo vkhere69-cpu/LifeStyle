@@ -83,7 +83,7 @@ export default function ComedyMascot() {
   return (
     <div className="fixed bottom-8 right-8 z-40">
       <div className="relative">
-        <div className={`absolute bottom-20 right-0 bg-gradient-to-r ${currentCTA.color} text-white px-5 py-3 rounded-xl shadow-2xl whitespace-nowrap backdrop-blur-sm border border-white/20 transition-all duration-500`}>
+        <div className={`hidden md:block absolute bottom-20 right-0 bg-gradient-to-r ${currentCTA.color} text-white px-5 py-3 rounded-xl shadow-2xl whitespace-nowrap backdrop-blur-sm border border-white/20 transition-all duration-500`}>
           <div className="font-semibold text-sm">{currentCTA.message}</div>
           <div className={`absolute bottom-0 right-8 transform translate-y-1/2 rotate-45 w-3 h-3 bg-gradient-to-br ${currentCTA.color}`}></div>
         </div>
